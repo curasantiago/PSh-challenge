@@ -1,13 +1,395 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+
+.button-menu {
+  position: absolute;
+  z-index: 2;
+  right: 10px;
+  top: 5px;
+  position: fixed;
+  
+}
+
+.menu {
+  padding: 9px;
+  border-radius: 20px;
+  border: none;
+  background: rgb(36,4,0);
+  background: linear-gradient(90deg, rgba(36,4,0,1) 0%, rgba(162,26,26,1) 30%, rgba(159,43,43,1) 45%, rgba(167,33,33,1) 53%);
+  color: white;
+  font-weight: bolder;
+}
+
+.App {
+  background-color: gainsboro;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+ 
+}
+
+.app-container {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 350px;
+  background-color: #191a1e;
+}
+
+.sidebar {
+  position: fixed;
+  min-width: 350px;
+  
+}
+
+.img-sidebar{
+  object-fit: scale-down;
+  width: 85px;
+  padding: 20px;
+  
+}
+
+.sidebar-nav {
+  display: flex;
+  color: white;
+  font-weight: 200;
+  align-items: center;
+  height: 150px;
+  background: rgb(36,4,0);
+  background: linear-gradient(90deg, rgba(36,4,0,1) 0%, rgba(162,26,26,1) 30%, rgba(159,43,43,1) 45%, rgba(167,33,33,1) 53%);
+}
+
+.sidebar-contacts {
+  display: flex;
+  flex-direction: column;
+  background-color: #191a1e;
+  color: white;
+  
+  
+  
+}
+
+.img-article {
+  border-radius: 50%;
+  width: 55px;
+  object-fit: scale-down;
+  
+}
+
+.article-img-container {
+  padding: 5px;
+  
+}
+
+.contacts-article {
+  display: flex;
+  border-bottom: 0.3px solid gainsboro;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.contacts-article:hover {
+  background-color: #3c3d3f;
+  transition: 1s all;
+}
+
+.contacts-container:hover {
+  border-right: 2px solid red;
+  transition: 1s all;
+}
+
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  
+}
+
+
+
+.chatroom {
+  height: 100%;
+}
+
+.article-time-container {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.header-container {
+  display: flex;
+  background-color: white;
+  color: gray;
+  font-weight: 100;
+  min-height: 190px;
+  align-items: center;
+  position: sticky;
+  z-index: 1;
+  top: 0px;
+  width: 100%;
+}
+
+.header-img {
+  border-radius: 50%;
+  object-fit: scale-down;
+  width: 150px;
+  padding: 30px;
+  
+}
+
+.create-new {
+  background-color: #191a1e;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  font-family: 25px;
+  flex: 1;
+  
+}
+
+.header-info-container {
+  align-self: center;
+  flex: 1;
+}
+
+.header-info-container h2 {
+  font-weight: bold;
+}
+
+.header-info-container p {
+  font-style: italic;
+}
+
+.article-info {
+  width: 150px;
+  font-size: 14px;
+  color: gainsboro;
+}
+
+.article-info p {
+  color: gray;
+  margin-top: 5px;
+}
+
+.chatroom-container { 
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  flex: 1;
+ 
+}
+
+.chat-container {
+  display: flex;
+  border-radius: 30px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.chat-img {
+  width: 35px;
+  border-radius: 50%;
+  box-shadow: 5px 6px 13px 0px rgba(118,110,110,0.75);
+}
+.chat-text-container {
+  padding: 15px;
+  background-color: white;
+  border-radius: 15px;
+  margin-left: 15px;
+  box-shadow: 5px 6px 13px 0px rgba(118,110,110,0.75);
+  display: flex;
+  justify-content: space-between;
+  word-break: break-all
+}
+
+.form-container {
+  background-color: white;
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+  padding: 5px;
+ 
+}
+
+.form {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.input-container {
+  width: 70%;
+  margin-left: 10px;
+}
+
+.input {
+  padding: 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(222, 222, 231);
+  margin-right: 20px;
+  width: 100%;
+}
+
+.input:hover {
+  transition: 1s all;
+  background-color: rgb(203, 203, 204);
+  font-weight: bold;
+}
+
+.submit {
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background-color: gainsboro;
+  width: 120px;
+  color: gray;
+  font-weight: bold;
+}
+
+.submit:hover {
+  background-color: gray;
+  color: red;
+}
+
+.time-container {
+  font-size: 10px;
+  
+}
+
+.time-container p {
+  position: relative;
+  bottom: 35px;
+  right: 1px;
+  word-break: initial;
+}
+
+@media (max-width: 850px) {
+  .input {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .input-container {
+    width: 40%;
+  }
+
+  .submit {
+    padding: 10px;
+  }
+
+  .container {
+    min-width: 263px;
+  }
+
+  .sidebar-nav {
+    font-size: 10px;
+  }
+
+  .sidebar {
+    min-width: 250px;
+  }
+
+  
+}
+
+@media (max-width: 650px) {
+
+  .container {
+    min-width: 250px;
+  }
+
+  .img-sidebar {
+    width: 85px;
+  }
+
+  .sidebar-nav {
+    height: 70px;
+  }
+
+  .sidebar-nav {
+    font-size: 10px;
+  }
+  .header-container {
+    min-height: 58px;
+   
+  }
+
+  .header-img {
+    width: 85px;
+    padding: 10px;
+  }
+  .header-info-container {
+    font-size: 10px;
+  }
+  .submit {
+   display: none;
+  }
+  .input {
+    width: 160px;
+  }
+
+  .sidebar-nav {
+    height: 80px;
+  }
+
+  .chatroom-container {
+    font-size: 10px;
+  }
+
+ .article-info {
+   font-size: 8px;
+ }
+ 
+ .article-time-container {
+   font-size: 7px;
+ }
+
+  .img-article {
+    width: 40px;
+  }
+  
+  .button-menu {
+    display: block;
+    
+  }
+
+
+
+}
+
+@media (max-width: 650px) {
+  .menu {
+    padding: 5px;
+  }
+
+  .input {
+    width: 225px;
+  }
+  
+}
+
+@media (max-width: 475px) {
+  .container {
+    min-width: 475px;
+  }
+
+ .sidebar {
+   min-width: 100%;
+ }
 }
